@@ -4,7 +4,7 @@ const FavoritesCart = ({phone}) => {
     const { image, phone_name, price,  brand_name } = phone || {};
     return (
         <div>
-             <div className="relative flex w-full max-w-[48rem] flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+             <div className="border-r-8 border-indigo-500 relative flex w-full max-w-[48rem] flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
                 <div className="relative w-2/5 m-0 overflow-hidden text-gray-700 bg-white rounded-r-none shrink-0 rounded-xl bg-clip-border">
                     <img
                         src={image}
@@ -33,3 +33,6 @@ const FavoritesCart = ({phone}) => {
 };
 
 export default FavoritesCart;
+
+
+// 2.27  

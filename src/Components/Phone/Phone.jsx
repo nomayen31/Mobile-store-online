@@ -5,7 +5,7 @@ const Phone = ({ phone }) => {
     const { id, image, phone_name, price, rating, brand_name } = phone || {};
     return (
         <div>
-            <div className="relative flex flex-col text-gray-700 bg-white shadow-md w-96 rounded-xl bg-clip-border">
+            <div className="border-l-2 border-t-2 border-indigo-500 relative flex flex-col text-gray-700 bg-white shadow-md w-96 rounded-xl bg-clip-border">
                 <div className="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white h-96 rounded-xl bg-clip-border">
                     <img
                         src={image}

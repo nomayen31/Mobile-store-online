@@ -36,7 +36,7 @@ const PhoneDetailsCart = ({phone}) => {
     return (
         <div className='flex justify-center items-center h-[60vh]'>
             <ToastContainer />
-              <div className="relative flex w-full max-w-[48rem] flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+              <div className=" border-r-8 border-indigo-500  relative flex w-full max-w-[48rem] flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
                 <div className="relative w-2/5 m-0 overflow-hidden text-gray-700 bg-white rounded-r-none shrink-0 rounded-xl bg-clip-border">
                     <img
                         src={image}
