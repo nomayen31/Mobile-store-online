@@ -1,7 +1,13 @@
 import React from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const PhoneDetailsCart = ({phone}) => {
-    const { image, phone_name, price,  brand_name } = phone || {};
+    const {id, image, phone_name, price,  brand_name } = phone || {};
+
     const handleAddToFavorite = ()=>{
+        const notify = () => toast("Favorites item added ");
+        const here = () => toast("This Item is already added on favorite  ");
 
         const addedFavoritesArray = [];
 
@@ -11,16 +17,25 @@ const PhoneDetailsCart = ({phone}) => {
         if (!favoriteItems) {
             addedFavoritesArray.push(phone)
             localStorage.setItem('favorites',JSON.stringify(addedFavoritesArray))
+            notify()
         }
         else{
-            addedFavoritesArray.push(...favoriteItems, phone)
-            localStorage.setItem('favorites',JSON.stringify(addedFavoritesArray))
-        }
-
-        
+            const isExits = favoriteItems.find(phone => phone.id === id)
+            if (!isExits) {
+                addedFavoritesArray.push(...favoriteItems, phone)
+                localStorage.setItem('favorites',JSON.stringify(addedFavoritesArray))
+                notify()
+            }
+            else{
+                here()
+            }  
+           
+        } 
     }
+    
     return (
         <div className='flex justify-center items-center h-[60vh]'>
+            <ToastContainer />
               <div className="relative flex w-full max-w-[48rem] flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
                 <div className="relative w-2/5 m-0 overflow-hidden text-gray-700 bg-white rounded-r-none shrink-0 rounded-xl bg-clip-border">
                     <img
