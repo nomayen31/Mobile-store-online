@@ -1,9 +1,12 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import Phone from '../Phone/Phone';
 
 
+
 const Phones = ({phones}) => {
     console.log(phones);
+   
   
     return (
         <div className='py-10'>
